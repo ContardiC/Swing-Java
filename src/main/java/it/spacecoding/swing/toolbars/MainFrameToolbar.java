@@ -1,23 +1,26 @@
-package it.spacecoding.swing.customcomponents;
+package it.spacecoding.swing.toolbars;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainFramePanel extends JFrame {
+public class MainFrameToolbar extends JFrame {
 
     private JButton btn;
     private TextPanel textPanel;
-
-    public MainFramePanel(){
+    private Toolbar toolbar;
+    public MainFrameToolbar(){
         super("MainFrame with Panel");
         setLayout(new BorderLayout());
 
         textPanel = new TextPanel();
         btn = new JButton("Click Me!");
+        toolbar = new Toolbar();
         add(textPanel, BorderLayout.CENTER);
         add(btn, BorderLayout.SOUTH);
+        add(toolbar, BorderLayout.NORTH);
+        // TODO: Communications Between Components
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -25,7 +28,7 @@ public class MainFramePanel extends JFrame {
             }
         });
 
-        setSize(400,200);
+        setSize(400,300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
