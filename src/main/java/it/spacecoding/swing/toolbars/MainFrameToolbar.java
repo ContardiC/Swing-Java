@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 
 public class MainFrameToolbar extends JFrame {
 
-    private JButton btn;
     private TextPanel textPanel;
     private Toolbar toolbar;
     public MainFrameToolbar(){
@@ -15,18 +14,18 @@ public class MainFrameToolbar extends JFrame {
         setLayout(new BorderLayout());
 
         textPanel = new TextPanel();
-        btn = new JButton("Click Me!");
         toolbar = new Toolbar();
-        add(textPanel, BorderLayout.CENTER);
-        add(btn, BorderLayout.SOUTH);
-        add(toolbar, BorderLayout.NORTH);
-        // TODO: Communications Between Components
-        btn.addActionListener(new ActionListener() {
+
+        toolbar.setStringListener(new StringListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                textPanel.appendText("Hello\n");
+            public void textEmitted(String text) {
+                textPanel.appendText(text);
             }
         });
+        add(textPanel, BorderLayout.CENTER);
+        add(toolbar, BorderLayout.NORTH);
+
+
 
         setSize(400,300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
