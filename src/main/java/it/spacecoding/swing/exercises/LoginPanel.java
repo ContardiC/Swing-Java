@@ -5,7 +5,9 @@ import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.border.*;
 
 public class LoginPanel extends JPanel{
     JLabel emaiLabel;
@@ -28,6 +30,8 @@ public class LoginPanel extends JPanel{
         gc.gridx = 1;
         gc.gridy = 0;
         add(emailField, gc);
+        Border border = BorderFactory.createTitledBorder("Login");
+        setBorder(border);
         //TODO: Insert code here
     }
 }
