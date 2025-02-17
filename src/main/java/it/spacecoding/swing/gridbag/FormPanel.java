@@ -32,5 +32,19 @@ public class FormPanel extends JPanel {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.weightx = 1 ;
         gridBagConstraints.weighty = 1;
+        gridBagConstraints.fill = GridBagConstraints.NONE;
+        add(nameLabel, gridBagConstraints);
+        
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        add(nameField, gridBagConstraints);
+
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        add(occupationLabel, gridBagConstraints);
+
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        add(occupationField,gridBagConstraints);
     }
 }
