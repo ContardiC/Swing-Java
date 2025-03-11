@@ -1,6 +1,4 @@
-package it.spacecoding.swing.forms;
-
-import com.sun.tools.javac.Main;
+package it.spacecoding.swing.radiocheckbutton;
 
 import javax.swing.*;
 import java.awt.*;
